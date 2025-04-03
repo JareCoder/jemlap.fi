@@ -12,9 +12,11 @@ import SkillLayout from '@/components/home/SkillLayout.astro'
 import avatar from '@/assets/avatar.jpg'
 import config from '@/site-config'
 
-const languages = ['Html', 'JavaScript', 'CSS', 'Shell']
-const frontend = ['TypeScript', 'Vite', 'Webpack', 'Astro']
-const backend = ['Vercel', 'Waline']
+const languages = ['JavaScript', 'Python', 'Flutter', 'Java', 'C++', 'C#', 'Bash', 'PowerShell']
+const frontend = ['TypeScript', 'React', 'Astro', 'Next.js', 'Tailwind CSS']
+const backend = ['Vercel', 'Node.js', 'PostqreSQL', 'Firebase', 'MongoDB']
+const servers = ['Linux', 'Windows', 'Docker', 'Nginx', 'Apache']
+const other = ['UE5', 'Unity', 'Blender', 'DaVinci Resolve', 'Photoshop', 'Gimp', 'Figma', 'After Effects']
 
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
@@ -81,7 +83,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       }
 
       {
-        /* <Section title='Experience'>
+        <Section title='Experience'>
       <Card
         heading='Lorem Ipsum'
         subheading='Sit amet consectetur'
@@ -107,7 +109,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         altText='Lorem, ipsum dolor sit'
         imageClass='h-12 w-auto md:-start-16'
       />
-    </Section> */
+    </Section>
       }
       <Section title='Education'>
         <Card
@@ -172,6 +174,8 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         <SkillLayout title='Languages' skills={languages} />
         <SkillLayout title='Frontend' skills={frontend} />
         <SkillLayout title='Backend' skills={backend} />
+        <SkillLayout title='Servers' skills={servers} />
+        <SkillLayout title='Other' skills={other} />
       </Section>
     </div>
     <Quote class='mt-12' />
