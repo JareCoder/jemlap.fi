@@ -14,8 +14,8 @@ import config from '@/site-config'
 
 const languages = ['JavaScript', 'Python', 'Flutter', 'Java', 'C++', 'C#', 'Bash', 'PowerShell']
 const frontend = ['TypeScript', 'React', 'Astro', 'Next.js', 'Tailwind CSS']
-const backend = ['Vercel', 'Node.js', 'PostqreSQL', 'Firebase', 'MongoDB']
-const servers = ['Linux', 'Windows', 'Docker', 'Nginx', 'Apache']
+const backend = ['Vercel', 'Node.js', 'PostqreSQL', '.NET', 'Firebase', 'MongoDB']
+const servers = ['AWS', 'Azure', 'Oracle', 'Docker', 'Linux', 'Windows', 'Nginx', 'Apache']
 const other = ['UE5', 'Unity', 'Blender', 'DaVinci Resolve', 'Photoshop', 'Gimp', 'Figma', 'After Effects']
 
 const MAX_POSTS = 10
@@ -23,7 +23,7 @@ const allPosts = await getBlogCollection()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
 
-<PageLayout meta={{ title: 'Home' }} highlightColor='#659EB9'>
+<PageLayout meta={{ title: 'Home' }} highlightColor='#728AF2'>
   <main class='flex w-full flex-col items-center'>
     <section class='animate mb-10 flex flex-col items-center gap-y-7' id='content-header'>
       <Image
@@ -60,7 +60,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
       <Section title='About'>
-        <p class='text-muted-foreground'>Developer / Designer</p>
+        <p class='text-muted-foreground'>Software Developer</p>
         <p class='text-muted-foreground'>
           Hi! I'm Jesse, a developer based in Finland and I love everything tech related. I'm currently focusing on web development, mobile development, all kinds of servers and scripting.
           I also love creating visual stuff, so I do some 3D modeling, video production and editing on the side.
@@ -84,49 +84,66 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
       {
         <Section title='Experience'>
-      <Card
-        heading='Lorem Ipsum'
-        subheading='Sit amet consectetur'
-        date='Dec 2022 - Nov 2023'
-        imagePath='/src/assets/about-astro.png'
-        altText='Lorem, ipsum dolor sit'
-        imageClass='h-12 w-auto md:-start-16'
-      >
-        <ul class='ms-4 list-disc text-muted-foreground'>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-            molestiae laboriosam pariatur!
-
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-          </li>
-        </ul>
-      </Card>
-      <Card
-        heading='Lorem Ipsum'
-        subheading='Sit amet consectetur'
-        date='Dec 2022 - Nov 2023'
-        imagePath='/src/assets/about-astro.png'
-        altText='Lorem, ipsum dolor sit'
-        imageClass='h-12 w-auto md:-start-16'
-      />
-    </Section>
+          <Card
+            as='a'
+            heading='Software Designer Trainee'
+            subheading='Wapice Oy'
+            date='Feb 2024 - Present'
+            href='https://wapice.com/careers/wapice-talents/'
+          >
+            <p class='text-foreground'>
+                Wapice Talents program for students. The program is designed to give students a chance to work on real projects and gain experience in the field of software development.
+            </p>
+            <ul class='ms-4 list-disc text-muted-foreground'>
+              <li>Unity, React, .NET, TypeScript, Blender, OpenCAD</li>
+            </ul>
+          </Card>
+          <Card
+            as='a'
+            heading='CEO & Co-Founder'
+            subheading='Mankeli Solutions Oy'
+            date='Jan 2023 - Present'
+            href='https://mankelisolutions.fi'
+          >
+          <p class='text-foreground'>
+            We at Mankeli specialize in mobile and web development. We can handle everything from the design to the implementation and deployment of your project.
+          </p>
+          <ul class='ms-4 list-disc text-muted-foreground'>
+              <li>Unity, React, .NET, TypeScript, Blender, OpenCAD</li>
+            </ul>
+          </Card>
+        </Section>
       }
       <Section title='Education'>
         <Card
           as='a'
-          heading='Lorem ipsum'
-          subheading='Lorem ipsum dolor sit amet, vidit suscipit at mei.'
-          date='August 2021 - July 2025'
-          href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+          heading='University of Turku'
+          subheading='Information Technology (In progress)'
+          date='Aug 2021 - Jul 2027'
+          href='https://www.utu.fi/fi/opiskelijaksi/tietotekniikka-tekniikan-kandidaatti-ja-diplomi-insinoori-3-v-2-v'
         >
           {
-            /* <ul class='ms-4 list-disc text-muted-foreground'>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-            molestiae laboriosam pariatur!
-          </li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-        </ul> */
+          <ul class='ms-4 list-disc text-muted-foreground'>
+            <li>
+              Bachelor of Techonology
+            </li>
+            <li>Master of Science (Engineering)</li>
+          </ul>
+          }
+        </Card>
+        <Card
+          as="a"
+          heading='Kerttuli ICT High School'
+          subheading='Information Technology'
+          date='Sep 2018 - May 2021'
+          href='https://www.ictlukio.com'
+        >
+        {
+          <ul class='ms-4 list-disc text-muted-foreground'>
+            <li>
+              High School Diploma with specialization in Information Technology
+            </li>
+          </ul>
           }
         </Card>
       </Section>
@@ -174,7 +191,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         <SkillLayout title='Languages' skills={languages} />
         <SkillLayout title='Frontend' skills={frontend} />
         <SkillLayout title='Backend' skills={backend} />
-        <SkillLayout title='Servers' skills={servers} />
+        <SkillLayout title='Cloud' skills={servers} />
         <SkillLayout title='Other' skills={other} />
       </Section>
     </div>
