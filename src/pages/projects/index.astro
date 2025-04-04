@@ -7,9 +7,10 @@ import ProjectSection from '@/components/projects/ProjectSection.astro'
 import config from '@/site-config'
 
 const headings = [
-  { depth: 2, slug: 'theme', text: 'Theme' },
-  { depth: 2, slug: 'programs', text: 'Programs' },
+  { depth: 2, slug: 'my-projects', text: 'My Projects' },
+  { depth: 2, slug: 'collab', text: 'Collaborative Projects' },
   { depth: 2, slug: 'learnings', text: 'Learnings' },
+  { depth: 2, slug: 'hackathons', text: 'Hackathons' },
   { depth: 2, slug: 'others', text: 'Others' },
 ]
 ---
@@ -25,14 +26,17 @@ const headings = [
     />
   </p>
   <p>
+    Take a peek at some of my projects and learnings below. Due to the nature of my work and contributions, some projects may be private or not publicly available. You can read about them in the linked blog posts!
+  </p>
+  <p>
     Find something interesting and want to know more? Feel free to reach out on <a class='text-muted-foreground' href="/about#social-networks">LinkedIn</a>!
   </p>
 
-  <h2 id='programs'>My Projects</h2>
+  <h2 id='my-projects'>My Projects</h2>
   <ProjectSection
     project={[
       {
-        name: 'Shibuya Comics (WIP)',
+        name: 'Shibuya  App (WIP)',
         description: 'Flutter project for a private social media app',
         links: [
           { type: 'github', href: 'https://github.com/JareCoder/ShibuyaComics' }
@@ -48,6 +52,31 @@ const headings = [
     ]}
   />
 
+  <h2 id='collab'>Collaborative Projects</h2>
+  <ProjectSection
+    project={[
+      {
+        name: 'Root IT Career Fair',
+        description: 'A website for a career fair event',
+        links: [{ type: 'site', href: 'https://rootexpo.fi'}]
+      },
+      {
+        name: 'Digit App',
+        description: 'Mobile app (Flutter) for Digit ry student organization',
+        links: [{ type: 'site', href: 'https://play.google.com/store/apps/details?id=co.mankeli.digit'}
+        ]
+      },
+      {
+        name: 'Digit ry Infrastructure',
+        description: 'Website and member register for Digit ry hosted on AWS',
+        links: [
+          { type: 'site', href: 'https://digit.fi/en'},
+          { type: 'doc', href: 'fix-this'}
+        ]
+      }
+    ]}
+  />
+
   <h2 id='learnings'>Learnings</h2>
   <ProjectSection
     class='my-2'
@@ -55,8 +84,18 @@ const headings = [
       {
         name: 'Full Stack Open',
         description: 'Full Stack Open course by University of Helsinki',
-        links: [{ type: 'github', href: 'https://github.com/JareCoder/FullStackOpen' },
+        links: [
+          { type: 'github', href: 'https://github.com/JareCoder/FullStackOpen' },
           { type: 'site', href: 'https://fullstackopen.com/en/' }
+        ]
+      },
+      {
+        name: 'CodeMonkey Unity Course',
+        description: 'Unity course by CodeMonkey. Game is self hosted under first link!',
+        links: [
+          { type: 'release', href: 'fix-this' },
+          { type: 'github', href: 'figure this one out'},
+          { type: 'site', href: 'https://unitycodemonkey.com/kitchenchaoscourse.php' }
         ]
       }
     ]}
@@ -87,14 +126,21 @@ const headings = [
       {
         name: 'QuickBim',
         description: "Juction 2024 3rd place overall",
-        links: [{ type: 'github', href: 'https://github.com/Mankeli-Software/quickbim' },
-          { type: 'site', href: 'https://quickbim.fi' }
+        links: [
+          { type: 'github', href: 'https://github.com/Mankeli-Software/quickbim' },
+          { type: 'site', href: 'https://quickbim.fi' },
+          { type: 'doc', href: 'fix-this' }
         ]
       },
       {
         name: 'J-mp',
         description: 'Junction 2023 2nd place in Huawei track',
         links: [{ type: 'github', href: 'https://github.com/Mankeli-Software/junction2023'}]
+      },
+      {
+        name: 'BoxBunny',
+        description: 'Junction 2022 top 30% in Wolt track',
+        links: [{ type: 'github', href: 'https://github.com/Mankeli-Software/BoxBunny'}]
       }
     ]}
   />
