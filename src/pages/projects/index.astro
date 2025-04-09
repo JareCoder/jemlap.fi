@@ -26,15 +26,25 @@ const headings = [
     />
   </p>
   <p>
-    Take a peek at some of my projects and learnings below. Due to the nature of my work and contributions, some projects may be private or not publicly available. You can read about them in the linked blog posts!
+    Take a peek at some of my projects and learnings below. Due to the nature of my work and contributions, 
+    some projects may be private or not publicly available. You can read about them in the linked blog posts!
   </p>
   <p>
-    Find something interesting and want to know more? Feel free to reach out on <a class='text-muted-foreground' href="/about#social-networks">LinkedIn</a>!
+    Find something interesting and want to know more? Feel free to reach out 
+    on <a class='text-muted-foreground' href="/about#social-networks">LinkedIn</a>!
   </p>
 
   <h2 id='my-projects'>My Projects</h2>
   <ProjectSection
     project={[
+      {
+        name: 'Shibuya Movies',
+        description: 'React Vite and Node app to vote for movies to watch',
+        links: [
+          { type: 'site', href: 'https://movies.jemlap.fi'},
+          { type: 'github', href: 'https://github.com/JareCoder/ShibuyaMovies'}
+        ]
+      },
       {
         name: 'Shibuya  App (WIP)',
         description: 'Flutter project for a private social media app',
@@ -139,7 +149,7 @@ const headings = [
       },
       {
         name: 'BoxBunny',
-        description: 'Junction 2022 top 30% in Wolt track',
+        description: 'Junction 2022 top 30 in Wolt track',
         links: [{ type: 'github', href: 'https://github.com/Mankeli-Software/BoxBunny'}]
       }
     ]}
