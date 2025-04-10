@@ -1,43 +1,72 @@
 {
   "friends": [
     {
-      "id_name": "cf-links",
-      "desc": "Common links included in circle friends",
+      "id_name": "courses",
+      "desc": "Links to courses I've enjoyed",
       "link_list": [
         {
-          "name": "Arthals' ink",
-          "intro": "所见高山远木，阔云流风；所幸岁月盈余，了无拘束",
-          "link": "https://arthals.ink/",
-          "avatar": "https://cdn.arthals.ink/Arthals.png"
+          "name": "Kitchen Chaos Unity Course",
+          "intro": "Excellent Unity course for beginners and intermediate developers",
+          "link": "https://unitycodemonkey.com/kitchenchaoscourse.php",
+          "avatar": "https://unitycodemonkey.com/android-chrome-192x192.png"
         },
         {
-          "name": "CWorld Site",
-          "intro": "求知若愚，虚怀若谷",
-          "link": "https://cworld0.com/",
-          "avatar": "https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200"
+          "name": ".NET Core & React",
+          "intro": "Complete Guide to Building an App with .NET Core and React",
+          "link": "www.udemy.com/course/complete-guide-to-building-an-app-with-net-core-and-react",
+          "avatar": "https://cdn.brandfetch.io/idTqV2BNgX/w/400/h/400/theme/dark/icon.png"
         }
       ]
     },
     {
-      "id_name": "inactive-links",
-      "desc": "Inactive or rule-breaking friends",
+      "id_name": "inactive-courses",
+      "desc": "Inactive or removed courses",
       "link_list": []
     },
     {
-      "id_name": "special-links",
-      "desc": "Other special links",
+      "id_name": "friends",
+      "desc": "Check out some of my friends",
       "link_list": [
         {
-          "name": "虫洞",
-          "intro": "随机前往十年之约的成员博客",
-          "link": "https://www.foreverblog.cn/go.html",
-          "avatar": "/images/wormhole.png"
+          "name": "Juho Torkkeli",
+          "intro": "Flutter enthusiast and developer",
+          "link": "https://juho.torkke.li",
+          "avatar": "https://juho.torkke.li/images/profile_round.webp"
         },
         {
-          "name": "开往",
-          "intro": "随机前往开往的成员博客",
-          "link": "https://www.travellings.cn/go.html",
-          "avatar": "https://www.travellings.cn/assets/travelling.png"
+          "name": "Onnimanni Hannonen",
+          "intro": "Flutter enthusiast and developer",
+          "link": "https://github.com/O-Hannonenl",
+          "avatar": "https://avatars.githubusercontent.com/u/51901607?v=4"
+        },
+        {
+          "name": "Aku Paananen",
+          "intro": "CyberSec enthusiast and developer",
+          "link": "https://www.linkedin.com/in/aku-paananen-671b5a1b7/",
+          "avatar": "https://media.licdn.com/dms/image/v2/D4D03AQHFajUnURVMCQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1705313800901?e=1749686400&v=beta&t=hs_GH31wLIZ42NJRO05QsHDKzH068wm_daN0c5J2ve8"
+        },
+        {
+          "name": "Lauri Heinonen",
+          "intro": "Keyboard enthusiast and web developer",
+          "link": "https://www.linkedin.com/in/-lauriheinonen/",
+          "avatar": "https://media.licdn.com/dms/image/v2/D4D03AQEi_VtNq3jLDQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1706701094773?e=1749686400&v=beta&t=tOCq7FxoII912SISNpVKKsKGkWsYZf_tgrLSGIdeuZ4"
+        }
+      ]
+    },
+    {
+      "id_name": "inactive-friends",
+      "desc": "Inactive or bad links",
+      "link_list": []
+    },
+    {
+      "id_name": "other-links",
+      "desc": "Other links",
+      "link_list": [
+        {
+          "name": "Mankeli Solutions",
+          "intro": "Web, mobile and embedded development",
+          "link": "https://mankelisolutions.fi",
+          "avatar": "/images/mankelisolutions.png"
         }
       ]
     }
