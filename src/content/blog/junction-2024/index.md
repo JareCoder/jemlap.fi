@@ -1,6 +1,6 @@
 ---
 title: 'Junction 2024'
-publishDate: 2024-15-10
+publishDate: 2024-11-15
 description: 'Our journey and success at one of the Europs biggest hacakthons.'
 tags:
   - Hackathon
