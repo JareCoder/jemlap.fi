@@ -15,7 +15,7 @@ export const theme: ThemeUserConfig = {
     lang: 'en-US',
     attrs: 'en_US',
     // Date locale
-    dateLocale: 'en-US',
+    dateLocale: 'fi-FI',
     dateOptions: {
       day: 'numeric',
       month: 'short',
@@ -48,7 +48,6 @@ export const theme: ThemeUserConfig = {
   header: {
     menu: [
       { title: 'Blog', link: '/blog' },
-      //{ title: 'Docs', link: '/docs' },
       { title: 'Projects', link: '/projects' },
       { title: 'Links', link: '/links' },
       { title: 'About', link: '/about' }
@@ -59,13 +58,13 @@ export const theme: ThemeUserConfig = {
   footer: {
     // Registration information for ICP (optional)
     registration: {
-      url: 'https://icp.gov.moe/?keyword=APTX4869',
-      text: 'Moe ICP APTX4869'
+      url: '',
+      text: ''
     },
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     credits: true,
     /** Optional details about the social media accounts for this site. */
-    social: { github: 'https://github.com/cworld1/astro-theme-pure' }
+    social: { github: 'https://github.com/JareCoder' }
   },
 
   content: {
@@ -74,7 +73,7 @@ export const theme: ThemeUserConfig = {
     blogPageSize: 8,
     externalLinkArrow: true, // show external link arrow
     // Currently support weibo, x, bluesky
-    share: ['weibo', 'x', 'bluesky']
+    share: ['x', 'bluesky']
   }
 }
 
@@ -105,8 +104,10 @@ export const integ: IntegrationUserConfig = {
     // server: 'https://v1.hitokoto.cn/?c=i',
     // target: (data) => (data as { hitokoto: string }).hitokoto || 'Error'
     // https://github.com/lukePeavey/quotable
-    server: 'https://api.quotable.io/quotes/random?maxLength=60',
-    target: `(data) => data[0].content || 'Error'`
+    //server: 'https://api.quotable.io/quotes/random?maxLength=60', TODO: Out dated? Find a new one.
+    //target: `(data) => data[0].content || 'Error'`
+    server: '',
+    target: '',
   },
   // Tailwindcss typography
   // See: https://astro-pure.js.org/docs/integrations/others#tailwindcsstypography
