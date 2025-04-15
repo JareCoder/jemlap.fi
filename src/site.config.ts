@@ -81,18 +81,16 @@ export const integ: IntegrationUserConfig = {
   // Links menagement
   // See: https://astro-pure.js.org/docs/integrations/links
   links: {
-    // Friend logbook
+    // Courses logbook
     logbook: [
-      { date: '2024-07-01', content: 'Lorem ipsum dolor sit amet.' },
-      { date: '2024-07-01', content: 'vidit suscipit at mei.' },
-      { date: '2024-07-01', content: 'Quem denique mea id.' }
+      { date: '2025-04-16', content: 'Added .NET and Unity courses' },
     ],
     // Yourself link info
-    applyTip: [
+    applyTip: [ // Not in use rn
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
-      { name: 'Link', val: 'https://astro-pure.js.org/' },
-      { name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
+      { name: 'Link', val: 'https://jemlap.fi' },
+      { name: 'Avatar', val: '' }
     ]
   },
   // Enable page search function
