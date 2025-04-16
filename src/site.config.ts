@@ -102,10 +102,8 @@ export const integ: IntegrationUserConfig = {
     // server: 'https://v1.hitokoto.cn/?c=i',
     // target: (data) => (data as { hitokoto: string }).hitokoto || 'Error'
     // https://github.com/lukePeavey/quotable
-    //server: 'https://api.quotable.io/quotes/random?maxLength=60', TODO: Out dated? Find a new one.
-    //target: `(data) => data[0].content || 'Error'`
-    server: '',
-    target: '',
+    server: 'https://api.quotable.io/quotes/random?maxLength=60', //TODO: Out dated? Find a new one & put <Quote > back in home page
+    target: `(data) => data[0].content || 'Error'`
   },
   // Tailwindcss typography
   // See: https://astro-pure.js.org/docs/integrations/others#tailwindcsstypography
