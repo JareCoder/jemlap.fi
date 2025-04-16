@@ -1,7 +1,7 @@
 ---
 title: 'Junction 2024'
 publishDate: 2024-11-15
-description: 'Our journey and success at one of the Europs biggest hacakthons.'
+description: ´Our journey and success at one of the Europe's biggest hacakthons.´
 tags:
   - Hackathon
   - Docker
@@ -9,7 +9,7 @@ tags:
 language: 'English'
 heroImage: { src: './junction_thumbnail.jpg', color: '#D58388' }
 ---
-A weekend of pure brainstorming, development, troubleshooting and some more troubleshooting. Free food, workshops and cool challenges all provided for you. What more could you ask for?!
+A weekend full of pure brainstorming, development, troubleshooting and some more troubleshooting. Free food, workshops and cool challenges all provided for you. What more could you ask for?!
 
 ## What is Junction?
 Junction is one of the biggest Hackathons in Europe. It's hosted in Helsinki with over 1500 attending every year. From all over the world! You can read more about Junction here: https://www.hackjunction.com
@@ -25,7 +25,7 @@ We ended up doing KONE's challenge called "BIM for any building, by anyone". The
 The challenge allowed us to dive deeper into 3D rendering and handling in a web development environment. Which was all quite new to most of us.
 
 ## Gameplan
-Me having the most experience in 3D modeling and rendering, I started researching ready made solutions or projects for our SVG -> 3D process. After a few hours of digging we ended up finding a functional and dockerized project that we could use as our base. It utilized some smart math and Blender under the hood to draw found lines from the SVG. And an trained OpenCV model to recognize walls, windows and doors from the SVGs.
+Me having the most experience in 3D modeling and rendering, I started researching ready made solutions or projects for our SVG -> 3D process. After a few hours of digging we ended up finding a functional and dockerized project that we could use as our base. It utilized some smart math and Blender under the hood to draw found lines from the SVG. And a trained OpenCV model to recognize walls, windows and doors from the SVGs.
 
 Now that the tool from SVG -> 3D model had been found I could focus on getting it running in Azure and make sure we could access it. And oh boy was that easier said than done. After hours and hours of rebuilding Docker images, changing configurations and touching up code where needed we finally got it up and running. Now we could use a basic API to upload an image, build the 3D model and then save it to an Azure blob storage.
 
