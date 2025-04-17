@@ -11,9 +11,9 @@ import SkillLayout from '@/components/home/SkillLayout.astro'
 import avatar from '@/assets/avatar.jpg'
 import config from '@/site-config'
 
-const languages = ['JavaScript', 'Python', 'Flutter', 'Java', 'C++', 'C#', 'Bash', 'PowerShell']
-const frontend = ['TypeScript', 'React', 'Astro', 'Next.js', 'Tailwind CSS']
-const backend = ['Node.js', 'PostqreSQL', '.NET', 'Firebase', 'MongoDB']
+const languages = ['TypeScript', 'JavaScript', 'Python', 'Flutter', 'Java', 'C++', 'C#', 'Bash', 'PowerShell']
+const frontend = ['React + Vite', 'Astro', 'Next.js', 'Tailwind CSS']
+const backend = ['Node.js', '.NET', 'PostqreSQL', 'MySQL', 'Firebase', 'MongoDB']
 const cloud = ['AWS', 'Azure', 'Oracle', 'Vercel', 'Docker', 'Linux', 'Windows', 'Nginx', 'Apache']
 const other = ['UE5', 'Unity', 'Blender', 'DaVinci Resolve', 'Photoshop', 'Gimp', 'Figma', 'After Effects']
 
@@ -105,11 +105,26 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
             date='Jan 2023 - Present'
             href='https://mankelisolutions.fi'
           >
-          <p class='text-foreground'>
-            We at Mankeli specialize in mobile and web development. We can handle everything from the design to the implementation and deployment of your project.
-          </p>
-          <ul class='ms-4 list-disc text-muted-foreground'>
+            <p class='text-foreground'>
+              We at Mankeli specialize in mobile and web development. We can handle everything from the design to the implementation and deployment of your project.
+            </p>
+            <ul class='ms-4 list-disc text-muted-foreground'>
               <li>Flutter, Astro, React, NodeJS</li>
+            </ul>
+          </Card>
+          <Card
+            as='a'
+            heading='Game Operations Coordinator & Coach'
+            subheading='Pelikaverit Ry'
+            date='Jul 2022 - May 2024'
+            href='https://pelikaverit.fi'
+          >
+            <p class='text-foreground'>
+              Pelikaverit's mission is to create a safe and inclusive gaming community for everyone. My responsibilities included managing, updating and fixing game servers. 
+              Addittionally I managed and trained instructors for gaming clubs, communicated with customers, trained other coaches, coached teams and made materials necessary for all of it.
+            </p>
+            <ul class='ms-4 list-disc text-muted-foreground'>
+              <li>Management, Communication, Employee Training, Linux Servers</li>
             </ul>
           </Card>
         </Section>
