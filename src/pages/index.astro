@@ -8,7 +8,7 @@ import PageLayout from '@/layouts/BaseLayout.astro'
 //import ProjectCard from '@/components/home/ProjectCard.astro'
 import Section from '@/components/home/Section.astro'
 import SkillLayout from '@/components/home/SkillLayout.astro'
-import avatar from '@/assets/avatar.jpg'
+import avatar from '@/assets/avatar.png'
 import config from '@/site-config'
 
 const languages = ['TypeScript', 'JavaScript', 'Python', 'Flutter', 'Java', 'C++', 'C#', 'Bash', 'PowerShell']
@@ -28,7 +28,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       <Image
         src={avatar}
         alt='profile'
-        class='h-28 w-auto rounded-2xl border p-1'
+        class='h-28 w-auto rounded-2xl p-1'
         loading='eager'
       />
 
