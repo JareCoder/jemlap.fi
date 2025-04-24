@@ -90,7 +90,7 @@ export const integ: IntegrationUserConfig = {
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
       { name: 'Link', val: 'https://jemlap.fi' },
-      { name: 'Avatar', val: '' }
+      { name: 'Avatar', val: 'src/assets/avatar.png' }
     ]
   },
   // Enable page search function
