@@ -3,6 +3,7 @@ import { Timeline } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import Substats from '@/components/about/Substats.astro'
 import ToolSection from '@/components/about/ToolSection.astro'
+import config from '@/site-config'
 
 const headings = [
   { depth: 2, slug: 'hobbies', text: 'Hobbies' },
@@ -298,3 +299,21 @@ const headings = [
     </li>
   </ul>
 </PageLayout>
+
+{/* Fix view count */}
+<script
+  is:inline
+  type='module'
+  data-astro-rerun
+  define:vars={{ npmCDN: config.npmCDN, walineServer: config.integ.waline.server }}
+>
+  const loadPageviewCount = async () => {
+    const pageview = await import(`${npmCDN}/@waline/client@v3/dist/pageview.js`)
+    pageview.pageviewCount({
+      serverURL: walineServer,
+      path: window.location.pathname
+    })
+  }
+
+  await loadPageviewCount()
+</script>
