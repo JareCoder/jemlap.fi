@@ -3,7 +3,7 @@ import { Timeline } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import Substats from '@/components/about/Substats.astro'
 import ToolSection from '@/components/about/ToolSection.astro'
-import config from '@/site-config'
+//import config from '@/site-config'
 
 const headings = [
   { depth: 2, slug: 'hobbies', text: 'Hobbies' },
@@ -300,7 +300,7 @@ const headings = [
   </ul>
 </PageLayout>
 
-{/* Fix view count */}
+{/* Fix view count 
 <script
   is:inline
   type='module'
@@ -317,3 +317,4 @@ const headings = [
 
   await loadPageviewCount()
 </script>
+*/}
