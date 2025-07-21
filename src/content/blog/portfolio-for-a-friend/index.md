@@ -6,7 +6,6 @@ tags:
   - Project
   - Portfolio
   - Teaching
-  - Networking
   - Spreading love just because
 language: 'English'
 heroImage: { src: './Anti_banner.webp', color: '#4a4200ff' }
