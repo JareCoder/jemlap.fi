@@ -1,15 +1,18 @@
 ---
-title: ''
+title: 'CHANGE ME: Portfolio for a friend'
 publishDate: 2025-05-02
-description: ´´
+description: ´Can technical skills improve lives? / Spreading love and time, just because. / Are portfolio sites really that hard to make?´
 tags:
-  - Work
-  - Student
+  - Project
+  - Portfolio
+  - Teaching
+  - Networking
+  - Spreading love just because
 language: 'English'
 heroImage: { src: './Anti_banner.webp', color: '#4a4200ff' }
 ---
 
-- Fun project because I needed more hands on with NextJS
+- Fun project because I needed more hands on with Astro and webdev
 - Had time so wanted to help friends build their personal brand (do anything valuable for their hobbiess, careers, etc.)
 - Friend that does a lot of photography lacked a site and had been planning on making one sooner or later.
 - Perfect! After looking for some free templates we found a near perfect one from the free Astro templates.
