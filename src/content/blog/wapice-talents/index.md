@@ -22,7 +22,7 @@ But as luck would have it with a sprinkle of hard work, I got an interview! And 
 My first day started at the Tampere office, where I got to meet all my fellow Talents, mentors and pick up most of my gear. The day was filled with essential onboarding for our projects, but also included plenty of time to hang out and get to know each other.
 
 ## The project
-It took around a month for my project to actually start. So I spend time refreshing my Unity knowledge and doing the CodeMonkey course I have on my [recommended list](/links). Getting paid to study feels pretty amazing, but starting the proper project was even better. My task was to create a new visual guided selling tool that could be integrated to an existing Wapice product.
+It took around a month for my project to actually start. So I spent time refreshing my Unity knowledge and doing the CodeMonkey course I have on my [recommended list](/links). Getting paid to study feels pretty amazing, but starting the proper project was even better. My task was to create a new visual guided selling tool that could be integrated to an existing Wapice product.
 
 This project took up most of my time at Wapice and was developed in close collaboration with the customer. That meant A LOT of meetings and figuring out what exactly the customer wanted. And naturally, how to spin it into existence with the black magic we call code. So, a lot of valuable insight and experience gained there.
 
