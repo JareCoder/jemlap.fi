@@ -10,6 +10,7 @@ import ExperienceCard from '@/components/home/ExperienceCard.astro'
 import Section from '@/components/home/Section.astro'
 import SkillLayout from '@/components/home/SkillLayout.astro'
 import avatar from '@/assets/avatar.png'
+import forest from '@/assets/backgrounds/forest.webp'
 import gigiLogo from '@/assets/logos/gigi.webp'
 import kerttuliLogo from '@/assets/logos/kerttuli.webp'
 import mankeliLogo from '@/assets/logos/mankeli.webp'
@@ -30,7 +31,7 @@ const allPosts = await getBlogCollection()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
 
-<PageLayout meta={{ title: 'Home' }} highlightColor='#166534'>
+<PageLayout meta={{ title: 'Home' }} highlightColor='#166534' backgroundImage={forest}>
   <main class='flex w-full flex-col items-center'>
     <section class='animate mb-10 flex flex-col items-center gap-y-7' id='content-header'>
       <Image
