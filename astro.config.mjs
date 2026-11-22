@@ -3,16 +3,10 @@
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import vercel from '@astrojs/vercel'
 import AstroPureIntegration from 'astro-pure'
-import { defineConfig } from 'astro/config'
+import { defineConfig, fontProviders } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
-import UnoCSS from 'unocss/astro'
 
-// Others
-// import { visualizer } from 'rollup-plugin-visualizer'
-
-// Local integrations
-import { outputCopier } from './src/plugins/output-copier.ts'
 // Local rehype & remark plugins
 import rehypeAutolinkHeadings from './src/plugins/rehype-auto-link-headings.ts'
 // Shiki
@@ -20,10 +14,12 @@ import {
   addCopyButton,
   addLanguage,
   addTitle,
-  transformerNotationDiff,
-  transformerNotationHighlight,
   updateStyle
-} from './src/plugins/shiki-transformers.ts'
+} from './src/plugins/shiki-custom-transformers.ts'
+import {
+  transformerNotationDiff,
+  transformerNotationHighlight
+} from './src/plugins/shiki-official/transformers.ts'
 import config from './src/site.config.ts'
 
 // https://astro.build/config
@@ -32,6 +28,8 @@ export default defineConfig({
   site: 'https://jemlap.fi',
   // base: '/docs',
   trailingSlash: 'never',
+  // Astro 7 defaults to JSX-style whitespace stripping
+  compressHTML: true,
 
   // Adapter
   // https://docs.astro.build/en/guides/deploy/
@@ -51,21 +49,23 @@ export default defineConfig({
     }
   },
 
+  // Downloaded at build time and self-hosted with the site
+  fonts: [
+    {
+      provider: fontProviders.fontshare(),
+      name: 'Satoshi',
+      cssVariable: '--font-satoshi',
+      styles: ['normal', 'italic'],
+      weights: [400, 500],
+      subsets: ['latin']
+    }
+  ],
+
   integrations: [
-    // astro-pure will automatically add sitemap, mdx & tailwind
+    // astro-pure will automatically add sitemap, mdx & unocss
     // sitemap(),
     // mdx(),
-    UnoCSS({ injectReset: true }),
-    AstroPureIntegration(config),
-    // (await import('@playform/compress')).default({
-    //   SVG: false,
-    //   Exclude: ['index.*.js']
-    // }),
-    // Temporary fix vercel adapter
-    // static build method is not needed
-    outputCopier({
-      integ: ['sitemap', 'pagefind']
-    })
+    AstroPureIntegration(config)
   ],
   // root: './my-project-directory',
 
@@ -107,15 +107,6 @@ export default defineConfig({
     }
   },
   experimental: {
-    svg: true,
     contentIntellisense: true
-  },
-  vite: {
-    plugins: [
-      //   visualizer({
-      //     emitFile: true,
-      //     filename: 'stats.html'
-      //   })
-    ]
   }
 })

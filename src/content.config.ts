@@ -1,5 +1,6 @@
-import { defineCollection, z } from 'astro:content'
+import { defineCollection } from 'astro:content'
 import { glob } from 'astro/loaders'
+import { z } from 'astro/zod'
 
 function removeDupsAndLowerCase(array: string[]) {
   if (!array.length) return array
@@ -8,6 +9,7 @@ function removeDupsAndLowerCase(array: string[]) {
   return Array.from(distinctItems)
 }
 
+// Define blog collection
 const blog = defineCollection({
   // Load Markdown and MDX files in the `src/content/blog/` directory.
   loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
@@ -27,14 +29,14 @@ const blog = defineCollection({
           inferSize: z.boolean().optional(),
           width: z.number().optional(),
           height: z.number().optional(),
-
           color: z.string().optional()
         })
         .optional(),
       tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
       language: z.string().optional(),
       draft: z.boolean().default(false),
-      // Integrations
+      pin: z.boolean().optional(),
+      // Special fields
       comment: z.boolean().default(true)
     })
 })
@@ -49,7 +51,9 @@ const blog = defineCollection({
       publishDate: z.coerce.date().optional(),
       updatedDate: z.coerce.date().optional(),
       tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
-      draft: z.boolean().default(false)
+      draft: z.boolean().default(false),
+      // Special fields
+      order: z.number().default(999)
     })
 })*/
 

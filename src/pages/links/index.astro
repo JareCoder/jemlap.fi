@@ -1,8 +1,7 @@
 ---
-import links from 'public/links.json'
+import links from '@/public/links.json'
 import config from 'virtual:config'
 
-import { Comment } from 'astro-pure/advanced'
 import { Collapse, Timeline } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import FriendList from '@/components/links/FriendList.astro'
@@ -17,7 +16,7 @@ const { friends } = links
 const linksConf = config.integ.links
 ---
 
-<PageLayout title='Links' {headings} info='/links'>
+<PageLayout title='Links' {headings} view comment>
   <h2 id='courses'>Courses I recommend</h2>
   <FriendList list={friends[0]} />
   <Collapse title='Links with Bad Status'>
@@ -33,7 +32,4 @@ const linksConf = config.integ.links
   </Collapse>
   <h2 id="other-links">Other links</h2>
   <FriendList list={friends[4]} />
-
- 
-  <Comment slot='bottom' />
 </PageLayout>
