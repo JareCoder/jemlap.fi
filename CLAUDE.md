@@ -62,7 +62,9 @@ Notes on specific content types:
 - **Links** in `public/links.json` are read by array index in `src/pages/links/index.astro`
   (`friends[0]` courses, `[1]` inactive courses, `[2]` friends, `[3]` broken friend links,
   `[4]` other links), so keep the group order stable. The course logbook timeline lives in
-  `integ.links.logbook` in `src/site.config.ts`.
+  `integ.links.logbook` in `src/site.config.ts`. Friend avatars are stored in
+  `public/images/avatars/`, because LinkedIn image URLs expire. An entry can set an optional
+  `ribbon` (such as `"Open to work"`) to show a green corner ribbon on its card.
 - **Project links** take a `type` of `github`, `site`, `doc` or `release`, which selects the icon.
 - **Website history**: notable site changes get an entry in the timeline at the bottom of
   `src/pages/about/index.astro`.
