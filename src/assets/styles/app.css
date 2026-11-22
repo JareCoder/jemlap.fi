@@ -60,7 +60,7 @@ html.dark {
 }
 /* Cinematic vignette, fixed to the screen while the photo drifts underneath */
 #page-background::before {
-  --vignette: 0.6;
+  --vignette: 0.8;
   position: absolute;
   inset: 0;
   z-index: 2;
