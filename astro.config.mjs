@@ -28,6 +28,8 @@ export default defineConfig({
   site: 'https://jemlap.fi',
   // base: '/docs',
   trailingSlash: 'never',
+  // Astro 7 defaults to JSX-style whitespace stripping
+  compressHTML: true,
 
   // Adapter
   // https://docs.astro.build/en/guides/deploy/

@@ -6,10 +6,11 @@ and some leftover naming come from the theme rather than from this site.
 
 ## Tech stack
 
-- **Astro 6** with TypeScript (strict), `.astro` components, Markdown/MDX content. The version is
-  pinned to the exact one `astro-pure` depends on, so upgrade them together
+- **Astro 7** with TypeScript (strict), `.astro` components, Markdown/MDX content
 - **astro-pure 1.4.9** theme, installed from npm, provides layout pieces, UI components
-  (`astro-pure/user`, `astro-pure/advanced`, `astro-pure/components/pages`) and the `astro-pure` CLI
+  (`astro-pure/user`, `astro-pure/advanced`, `astro-pure/components/pages`) and the `astro-pure` CLI.
+  It still pins Astro 6, so `overrides` in `package.json` run it on Astro 7. Remove the `astro`,
+  `@astrojs/mdx` and `katex` overrides once a theme release supports Astro 7
 - **UnoCSS** for styling, added by the theme integration (Tailwind-style utility classes, typography
   preset in `uno.config.ts`)
 - **Vercel** adapter with `output: 'server'`; pages are prerendered by default (`prerender: true`

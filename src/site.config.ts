@@ -126,7 +126,6 @@ export const integ: IntegrationUserConfig = {
     // Refer https://waline.js.org/en/reference/client/props.html
     additionalConfigs: {
       // search: false,
-      pageview: true,
       comment: true,
       locale: {
         reaction0: 'Like',
