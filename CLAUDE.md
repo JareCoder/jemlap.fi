@@ -35,6 +35,10 @@ There are no tests. `npm run build` is the verification step.
 - All new additions go through a feature branch and a pull request. Never commit or push directly
   to `main`.
 - Always get Jesse's confirmation for a PR before merging it.
+- Always prioritize a separate git worktree for new work, because several sessions may use this
+  repo at once. Never switch branches in a checkout another session could be using. Create one with
+  `git worktree add -b <branch> ../jemlap.fi-<branch> <base>`, run `npm install` there, and give its
+  dev server a free port, such as `npx astro dev --port 4322`.
 
 ## Where content goes
 
@@ -51,6 +55,7 @@ There are no tests. `npm run build` is the verification step.
 | Legal pages | `src/pages/terms/*.md` |
 | Avatar and imported images | `src/assets/` |
 | Tool icons for the About page | `src/assets/tools/*.svg` |
+| Experience and education card logos (192px tiles, shown as circles, keep the mark inside the circle) | `src/assets/logos/` |
 | Project card images | `src/assets/projects/` (referenced by filename via the `image` prop) |
 | Favicons and static files served as-is | `public/` |
 | Site font (Satoshi, fetched at build time) | `fonts` in `astro.config.mjs` |
