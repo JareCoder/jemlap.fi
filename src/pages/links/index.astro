@@ -19,17 +19,25 @@ const linksConf = config.integ.links
 <PageLayout title='Links' {headings} view comment>
   <h2 id='courses'>Courses I recommend</h2>
   <FriendList list={friends[0]} />
-  <Collapse title='Links with Bad Status'>
-    <FriendList list={friends[1]} />
-  </Collapse>
+  {
+    friends[1].link_list.length > 0 && (
+      <Collapse title='Links with Bad Status'>
+        <FriendList list={friends[1]} />
+      </Collapse>
+    )
+  }
   <Collapse title='Course History Book'>
     <Timeline events={linksConf.logbook} />
   </Collapse>
   <h2 id='friends'>People I love to do cool stuff with</h2>
   <FriendList list={friends[2]} />
-  <Collapse title='Broken friend links'>
-    <FriendList list={friends[3]} />
-  </Collapse>
+  {
+    friends[3].link_list.length > 0 && (
+      <Collapse title='Broken friend links'>
+        <FriendList list={friends[3]} />
+      </Collapse>
+    )
+  }
   <h2 id="other-links">Other links</h2>
   <FriendList list={friends[4]} />
 </PageLayout>
