@@ -92,28 +92,46 @@ html.dark {
     }
   }
 }
-.dark #page-background::after {
+#page-background::after {
   position: absolute;
   inset: 0;
   background: #111;
   content: '';
+  opacity: 0.38;
+}
+.dark #page-background::after {
   opacity: 0.6;
+}
+html:not(.dark) #page-background img {
+  filter: saturate(0.85);
 }
 
 /* Frosted glass panels over the photo */
 body:has(#page-background) {
-  --glass-background: rgb(255 255 255 / 0.72);
-  --glass-border: rgb(255 255 255 / 0.6);
-  --glass-shadow: 0 8px 30px rgb(0 0 0 / 0.14);
-  --glass-menu: rgb(255 255 255 / 0.95);
+  --glass-background: rgb(240 242 238 / 0.68);
+  --glass-border: rgb(255 255 255 / 0.45);
+  --glass-shadow: 0 8px 30px rgb(0 0 0 / 0.22);
+  --glass-menu: rgb(250 251 249 / 0.96);
+  --glass-bar: rgb(245 246 243 / 0.88);
+}
+html:not(.dark) body:has(#page-background) {
+  --muted-foreground: 240 4% 16%;
+}
+/* Solid, brighter content surfaces so they stand out from the light glass */
+html:not(.dark) body:has(#page-background) #content {
+  --muted: 0 0% 98%;
+  --background: 0 0% 100%;
+  --border: 140 5% 80%;
+  --un-default-border-color: hsl(140 5% 80% / 1);
 }
 .dark body:has(#page-background) {
   --glass-background: rgb(16 16 22 / 0.62);
   --glass-border: rgb(255 255 255 / 0.12);
   --glass-shadow: 0 8px 30px rgb(0 0 0 / 0.4);
   --glass-menu: rgb(16 16 22 / 0.95);
+  --glass-bar: rgb(16 16 22 / 0.86);
 }
-body:has(#page-background) header-component:not(.not-top),
+body:has(#page-background) header-component,
 body:has(#page-background) #content-header,
 body:has(#page-background) #content > section,
 body:has(#page-background) footer {
@@ -129,11 +147,74 @@ body:has(#page-background) #content {
   opacity: 1;
   animation-fill-mode: backwards;
 }
-body:has(#page-background) header-component:not(.not-top) {
+/* The top bar and profile box form one block until the page scrolls */
+body:has(#page-background) header-component {
+  margin-inline: 0;
+  margin-bottom: 1rem;
   padding: 0.375rem 0.75rem;
+  transition:
+    padding 0.3s,
+    transform 0.3s,
+    margin-inline 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.2s,
+    border-radius 0.3s,
+    box-shadow 0.3s,
+    background-color 0.2s;
+}
+body:has(#page-background) header-component.not-top {
+  background: var(--glass-bar);
+  box-shadow: 0 14px 34px rgb(0 0 0 / 0.32);
+}
+/* Smooth detach and attach, using scale and translate so the theme's hide-on-scroll still works */
+@keyframes top-bar-detach {
+  0%,
+  100% {
+    translate: 0 0;
+    scale: 1;
+  }
+  45% {
+    translate: 0 4px;
+    scale: 0.98;
+  }
+}
+@keyframes top-bar-attach {
+  0%,
+  100% {
+    translate: 0 0;
+    scale: 1;
+  }
+  50% {
+    translate: 0 -2px;
+    scale: 1.006;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  body:has(#page-background) header-component[data-bar-motion='detach'] {
+    animation: top-bar-detach 0.5s ease-in-out;
+  }
+  body:has(#page-background) header-component[data-bar-motion='attach'] {
+    animation: top-bar-attach 0.45s ease-in-out;
+  }
+}
+/* When detached, the bar narrows to match the content panels (11/12 of the page width) */
+@media (min-width: 768px) {
+  body:has(#page-background) header-component.not-top {
+    margin-inline: calc(100% / 24);
+  }
+}
+/* While attached, the bar is its own glass piece joined directly to the profile box */
+body:has(#page-background) header-component:not(.not-top) {
+  border-bottom-color: transparent;
+  border-radius: 1rem 1rem 0 0;
+}
+body:has(#page-background) header-component:not(.not-top):not(.expanded) {
+  clip-path: inset(-40px -40px 0 -40px);
 }
 body:has(#page-background) #content-header {
+  align-self: stretch;
   padding: 1.75rem 2.5rem;
+  border-top: 0;
+  border-radius: 0 0 1rem 1rem;
 }
 body:has(#page-background) #content > section {
   padding: 1.25rem;

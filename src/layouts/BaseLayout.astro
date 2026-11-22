@@ -66,6 +66,21 @@ const {
       <Footer />
     </div>
 
+    {/* Play the top bar's detach and attach motion only when its state actually changes */}
+    <script is:inline>
+      ;(() => {
+        const bar = document.querySelector('header-component')
+        if (!bar || !document.getElementById('page-background')) return
+        let detached = bar.classList.contains('not-top')
+        new MutationObserver(() => {
+          const next = bar.classList.contains('not-top')
+          if (next === detached) return
+          detached = next
+          bar.dataset.barMotion = next ? 'detach' : 'attach'
+        }).observe(bar, { attributes: true, attributeFilter: ['class'] })
+      })()
+    </script>
+
     {/* Set highlight color */}
     <style define:vars={{ highlightColor }}>
       :global(.highlight) {
