@@ -3,7 +3,6 @@ import { Timeline } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import Substats from '@/components/about/Substats.astro'
 import ToolSection from '@/components/about/ToolSection.astro'
-import config from '@/site-config'
 
 const headings = [
   { depth: 2, slug: 'hobbies', text: 'Hobbies' },
@@ -13,7 +12,7 @@ const headings = [
 ]
 ---
 
-<PageLayout title='About' {headings} info={{ slug: '/about', hideComment: true }}>
+<PageLayout title='About' {headings} view>
   <p>Hi! I'm Jesse, a software developer based in Finland. Nice to meet you!</p>
   <p>
     I love building things, solving problems, and always chasing the next challenge. These days, I'm
@@ -308,21 +307,3 @@ const headings = [
     </li>
   </ul>
 </PageLayout>
-
-{/* Fix view count */}
-<script
-  is:inline
-  type='module'
-  data-astro-rerun
-  define:vars={{ npmCDN: config.npmCDN, walineServer: config.integ.waline.server }}
->
-  const loadPageviewCount = async () => {
-    const pageview = await import(`${npmCDN}/@waline/client@v3/dist/pageview.js`)
-    pageview.pageviewCount({
-      serverURL: walineServer,
-      path: window.location.pathname
-    })
-  }
-
-  await loadPageviewCount()
-</script>

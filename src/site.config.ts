@@ -56,22 +56,18 @@ export const theme: ThemeUserConfig = {
 
   /** Configure the footer of your site. */
   footer: {
-    // Registration information for ICP (optional)
-    registration: {
-      url: '',
-      text: ''
-    },
+    year: `© ${new Date().getFullYear()}`,
+    links: [{ title: 'Site Policy', link: '/terms/list', pos: 2 }],
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     credits: true,
     /** Optional details about the social media accounts for this site. */
-    social: { github: 'https://github.com/JareCoder' }
+    social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/JareCoder' }]
   },
 
   content: {
-    externalLinksContent: ' ↗',
+    externalLinks: { content: ' ↗' },
     /** Blog page size for pagination (optional) */
     blogPageSize: 8,
-    externalLinkArrow: true, // show external link arrow
     // Currently support weibo, x, bluesky
     share: ['x', 'bluesky']
   }

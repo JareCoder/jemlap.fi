@@ -1,10 +1,7 @@
 ---
-import { Image } from 'astro:assets'
-
 import { Collapse } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import ProjectSection from '@/components/projects/ProjectSection.astro'
-import config from '@/site-config'
 
 const headings = [
   { depth: 2, slug: 'my-projects', text: 'My Projects' },
@@ -15,13 +12,12 @@ const headings = [
 ]
 ---
 
-<PageLayout title='Projects' {headings} info={{ slug: '/projects', hideComment: true }}>
+<PageLayout title='Projects' {headings} view>
   <p>Github Activity:</p>
   <p>
-    <Image
+    <img
       src='https://ghchart.rshah.org/659eb9/JareCoder'
       alt='github activity table'
-      inferSize
       loading='lazy'
     />
   </p>
@@ -39,7 +35,7 @@ const headings = [
 
   <h2 id='my-projects'>My Projects</h2>
   <ProjectSection
-    project={[
+    projects={[
       {
         name: 'Shibuya Movies',
         description: 'React Vite and Node app to vote for movies to watch',
@@ -90,7 +86,7 @@ const headings = [
 
   <h2 id='collab'>Collaborative Projects</h2>
   <ProjectSection
-    project={[
+    projects={[
       {
         name: 'Root IT Career Fair',
         description: 'A website for a career fair event',
@@ -117,7 +113,7 @@ const headings = [
   <h2 id='learnings'>Learnings</h2>
   <ProjectSection
     class='my-2'
-    project={[
+    projects={[
       {
         name: 'Full Stack Open',
         description: 'Full Stack Open course by University of Helsinki',
@@ -140,7 +136,7 @@ const headings = [
 
   <Collapse title='Some uni courses & earlier education'>
     <ProjectSection
-      project={[
+      projects={[
         {
           name: 'Computer Architecture Demonstration',
           description: 'Course group project using Python',
@@ -162,7 +158,7 @@ const headings = [
 
   <h2 id='hackathons'>Hackathons</h2>
   <ProjectSection
-    project={[
+    projects={[
       {
         name: 'QuickBim',
         description: 'Juction 2024 3rd place overall',
@@ -187,7 +183,7 @@ const headings = [
 
   <h2 id='others'>Others</h2>
   <ProjectSection
-    project={[
+    projects={[
       {
         name: 'Mankeli Solutions Oy',
         description: "Mankeli's Github",
@@ -195,21 +191,4 @@ const headings = [
       }
     ]}
   />
-
-  <script
-    is:inline
-    type='module'
-    data-astro-rerun
-    define:vars={{ npmCDN: config.npmCDN, walineServer: config.integ.waline.server }}
-  >
-    const loadPageviewCount = async () => {
-      const pageview = await import(`${npmCDN}/@waline/client@v3/dist/pageview.js`)
-      pageview.pageviewCount({
-        serverURL: walineServer,
-        path: window.location.pathname
-      })
-    }
-
-    await loadPageviewCount()
-  </script>
 </PageLayout>
