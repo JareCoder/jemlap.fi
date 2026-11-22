@@ -25,29 +25,29 @@
     },
     {
       "id_name": "friends",
-      "desc": "Check out some of my friends",
+      "desc": "People I love to do cool stuff with",
       "link_list": [
         {
           "name": "Juho Torkkeli",
-          "intro": "Flutter expert and developer",
+          "intro": "Co-Founder and Senior Mobile Developer",
           "link": "https://juho.torkke.li/",
           "avatar": "/images/avatars/juho-torkkeli.webp"
         },
         {
           "name": "Onnimanni Hannonen",
-          "intro": "Flutter expert and developer",
+          "intro": "Co-Founder and Senior Flutter Engineer",
           "link": "https://o-hannonen.github.io/",
           "avatar": "https://avatars.githubusercontent.com/u/51901607?v=4"
         },
         {
           "name": "Aku Paananen",
-          "intro": "CyberSec enthusiast and developer",
+          "intro": "Co-Founder and Developer",
           "link": "https://www.linkedin.com/in/aku-paananen-671b5a1b7/",
           "avatar": "/images/avatars/aku-paananen.webp"
         },
         {
           "name": "Lauri Heinonen",
-          "intro": "Keyboard enthusiast and web developer",
+          "intro": "Software Developer @ twoday",
           "link": "https://www.linkedin.com/in/-lauriheinonen/",
           "avatar": "/images/avatars/lauri-heinonen.webp"
         },
@@ -59,9 +59,47 @@
         },
         {
           "name": "Miska Kytö",
-          "intro": "Microsoft expert and consultant",
+          "intro": "Microsoft MVP, Cybersecurity @ Zure",
           "link": "https://www.linkedin.com/in/miskakyto/",
           "avatar": "/images/avatars/miska-kyto.webp"
+        },
+        {
+          "name": "Alhassan Tameem",
+          "intro": "Software Engineering Graduate @ CU",
+          "link": "https://www.linkedin.com/in/alhassantameem/",
+          "avatar": "/images/avatars/alhassan-tameem.webp",
+          "ribbon": "Open to work"
+        },
+        {
+          "name": "Anni Eskelinen",
+          "intro": "Member of Technical Staff @ QuTwo",
+          "link": "https://www.linkedin.com/in/anni-eskelinen/",
+          "avatar": "/images/avatars/anni-eskelinen.webp"
+        },
+        {
+          "name": "Bambi Dang",
+          "intro": "Founder @ FunFox AI",
+          "link": "https://www.linkedin.com/in/bambidang/",
+          "avatar": "/images/avatars/bambi-dang.webp"
+        },
+        {
+          "name": "Moha Hannadige",
+          "intro": "Lead Solutions Architect @ Osuuskunta Vinde",
+          "link": "https://www.linkedin.com/in/mohanjith/",
+          "avatar": "/images/avatars/moha-hannadige.webp"
+        },
+        {
+          "name": "Marius Ranta",
+          "intro": "Exploring the world",
+          "link": "https://www.linkedin.com/in/marius-ranta/",
+          "avatar": "/images/avatars/marius-ranta.webp",
+          "ribbon": "Open to work"
+        },
+        {
+          "name": "Eero Pirkkalainen",
+          "intro": "Co-Founder and Head of Sales",
+          "link": "https://www.linkedin.com/in/eero-pirkkalainen-a205b0264/",
+          "avatar": "/images/avatars/eero-pirkkalainen.webp"
         }
       ]
     },
