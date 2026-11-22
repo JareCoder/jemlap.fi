@@ -13,7 +13,7 @@
         {
           "name": ".NET Core & React",
           "intro": "Complete Guide to Building an App with .NET Core and React",
-          "link": "www.udemy.com/course/complete-guide-to-building-an-app-with-net-core-and-react",
+          "link": "https://www.udemy.com/course/complete-guide-to-building-an-app-with-net-core-and-react",
           "avatar": "https://cdn.brandfetch.io/idTqV2BNgX/w/400/h/400/theme/dark/icon.png"
         }
       ]
@@ -31,7 +31,7 @@
           "name": "Juho Torkkeli",
           "intro": "Flutter expert and developer",
           "link": "https://juho.torkke.li/",
-          "avatar": "https://juho.torkke.li/images/profile_round.webp"
+          "avatar": "/images/avatars/juho-torkkeli.webp"
         },
         {
           "name": "Onnimanni Hannonen",
@@ -43,13 +43,13 @@
           "name": "Aku Paananen",
           "intro": "CyberSec enthusiast and developer",
           "link": "https://www.linkedin.com/in/aku-paananen-671b5a1b7/",
-          "avatar": "https://media.licdn.com/dms/image/v2/D4D03AQHFajUnURVMCQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1705313800901?e=1757548800&v=beta&t=tYC-_GoyuXfMomoRZM7avz_KhXlqEeIrCSmZ36-T-1E"
+          "avatar": "/images/avatars/aku-paananen.webp"
         },
         {
           "name": "Lauri Heinonen",
           "intro": "Keyboard enthusiast and web developer",
           "link": "https://www.linkedin.com/in/-lauriheinonen/",
-          "avatar": "https://media.licdn.com/dms/image/v2/D4D03AQE89N4HrvFlKg/profile-displayphoto-shrink_800_800/B4DZalcMNwHQAg-/0/1746532353409?e=1758153600&v=beta&t=_Seumhn5MI61UIRxCYFJ3BzA-1jiJ4lb2Q9iIrqpay8"
+          "avatar": "/images/avatars/lauri-heinonen.webp"
         },
         {
           "name": "Andreas Hartman",
@@ -61,7 +61,7 @@
           "name": "Miska Kytö",
           "intro": "Microsoft expert and consultant",
           "link": "https://www.linkedin.com/in/miskakyto/",
-          "avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFbOFWQcsPYgA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1679051820960?e=1757548800&v=beta&t=ouGvBlkwOdiY-j0XzcZgmW_K958lgCgkZVc4pyoWjb8"
+          "avatar": "/images/avatars/miska-kyto.webp"
         }
       ]
     },
@@ -79,6 +79,12 @@
           "intro": "Web, mobile and embedded development",
           "link": "https://mankelisolutions.fi",
           "avatar": "/images/mankelisolutions.png"
+        },
+        {
+          "name": "Gigi",
+          "intro": "Home services booking app",
+          "link": "https://gigiapp.fi",
+          "avatar": "/images/avatars/gigi.webp"
         }
       ]
     }
