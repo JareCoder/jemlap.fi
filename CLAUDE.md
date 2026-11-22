@@ -30,6 +30,12 @@ Uses **npm** (`package-lock.json`) on **Node 24**. Run `npm install` to set up.
 
 There are no tests. `npm run build` is the verification step.
 
+## Git workflow
+
+- All new additions go through a feature branch and a pull request. Never commit or push directly
+  to `main`.
+- Always get Jesse's confirmation for a PR before merging it.
+
 ## Where content goes
 
 | Content | Location |
