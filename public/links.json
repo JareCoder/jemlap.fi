@@ -85,6 +85,12 @@
           "intro": "Home services booking app",
           "link": "https://gigiapp.fi",
           "avatar": "/images/avatars/gigi.webp"
+        },
+        {
+          "name": "Root Expo",
+          "intro": "Finland's biggest IT career fair",
+          "link": "https://rootexpo.fi",
+          "avatar": "/images/avatars/root-expo.webp"
         }
       ]
     }
