@@ -79,6 +79,12 @@
           "intro": "Web, mobile and embedded development",
           "link": "https://mankelisolutions.fi",
           "avatar": "/images/mankelisolutions.png"
+        },
+        {
+          "name": "Gigi",
+          "intro": "Home services booking app",
+          "link": "https://gigiapp.fi",
+          "avatar": "/images/avatars/gigi.webp"
         }
       ]
     }
