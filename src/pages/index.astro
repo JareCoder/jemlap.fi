@@ -3,12 +3,20 @@ import { Image } from 'astro:assets'
 
 import { PostPreview } from 'astro-pure/components/pages'
 import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
-import { Button, Card, Icon, Label } from 'astro-pure/user'
+import { Button, Icon, Label } from 'astro-pure/user'
 import PageLayout from '@/layouts/BaseLayout.astro'
 //import ProjectCard from '@/components/home/ProjectCard.astro'
+import ExperienceCard from '@/components/home/ExperienceCard.astro'
 import Section from '@/components/home/Section.astro'
 import SkillLayout from '@/components/home/SkillLayout.astro'
 import avatar from '@/assets/avatar.png'
+import gigiLogo from '@/assets/logos/gigi.webp'
+import kerttuliLogo from '@/assets/logos/kerttuli.webp'
+import mankeliLogo from '@/assets/logos/mankeli.webp'
+import pelikaveritLogo from '@/assets/logos/pelikaverit.webp'
+import saarniCloudLogo from '@/assets/logos/saarni-cloud.webp'
+import utuLogo from '@/assets/logos/utu.webp'
+import wapiceLogo from '@/assets/logos/wapice.webp'
 import config from '@/site-config'
 
 const languages = ['TypeScript', 'JavaScript', 'Python', 'Flutter', 'Java', 'C++', 'C#', 'Bash', 'PowerShell']
@@ -85,13 +93,26 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
       {
         <Section title='Experience'>
-          
-          <Card
-            as='a'
+          <ExperienceCard
+            heading='Co-Founder & Developer'
+            subheading='Gigi Technologies Oy'
+            date='Jan 2026 - Present'
+            href='https://gigiapp.fi'
+            logo={gigiLogo}
+          >
+            <p class='text-foreground'>
+              Everyday help, without the hassle. You decide what you need and we take care of the rest, so you get more time for yourself and spend less of it on chores.
+            </p>
+            <ul class='ms-4 list-disc text-muted-foreground'>
+              <li>GCP, Flutter, Serverpod, Astro</li>
+            </ul>
+          </ExperienceCard>
+          <ExperienceCard
             heading='CEO & Co-Founder'
             subheading='Mankeli Solutions Oy'
             date='Jan 2023 - Present'
             href='https://mankelisolutions.fi'
+            logo={mankeliLogo}
           >
             <p class='text-foreground'>
               We at Mankeli specialize in mobile and web development. We can handle everything from the design to the implementation and deployment of your project.
@@ -99,13 +120,13 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
             <ul class='ms-4 list-disc text-muted-foreground'>
               <li>Flutter, Astro, React, NodeJS</li>
             </ul>
-          </Card>
-          <Card
-            as='a'
+          </ExperienceCard>
+          <ExperienceCard
             heading='ICT Specialist'
             subheading='Saarni Cloud'
             date='May 2025 - Present'
             href='https://saarnicloud.com'
+            logo={saarniCloudLogo}
           >
             <p class='text-foreground'>
               Management, configuring and development of on-site, cloud and mixed server solutions.
@@ -113,13 +134,13 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
             <ul class='ms-4 list-disc text-muted-foreground'>
               <li>Azure, AWS, Linux & Windows servers, Powershell, Bash, Ansible</li>
             </ul>
-          </Card>
-          <Card
-            as='a'
+          </ExperienceCard>
+          <ExperienceCard
             heading='Software Designer Trainee'
             subheading='Wapice Oy'
             date='Feb 2024 - Apr 2025'
             href='https://wapice.com/careers/wapice-talents/'
+            logo={wapiceLogo}
           >
             <p class='text-foreground'>
                 Wapice Talents program for students. The program is designed to give students a chance to work on real projects and gain experience in the field of software development.
@@ -127,13 +148,13 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
             <ul class='ms-4 list-disc text-muted-foreground'>
               <li>Unity, React, .NET, TypeScript, Blender, OpenCAD</li>
             </ul>
-          </Card>
-          <Card
-            as='a'
+          </ExperienceCard>
+          <ExperienceCard
             heading='Game Operations Coordinator & Coach'
             subheading='Pelikaverit Ry'
             date='Jul 2022 - May 2024'
             href='https://pelikaverit.fi'
+            logo={pelikaveritLogo}
           >
             <p class='text-foreground'>
               Pelikaverit's mission is to create a safe and inclusive gaming community for everyone. My responsibilities included managing, updating and fixing game servers. 
@@ -142,16 +163,16 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
             <ul class='ms-4 list-disc text-muted-foreground'>
               <li>Management, Communication, Employee Training, Linux Servers</li>
             </ul>
-          </Card>
+          </ExperienceCard>
         </Section>
       }
       <Section title='Education'>
-        <Card
-          as='a'
+        <ExperienceCard
           heading='University of Turku'
           subheading='Information Technology (In progress)'
           date='Aug 2021 - Jul 2027'
           href='https://www.utu.fi/fi/opiskelijaksi/tietotekniikka-tekniikan-kandidaatti-ja-diplomi-insinoori-3-v-2-v'
+          logo={utuLogo}
         >
           {
           <ul class='ms-4 list-disc text-muted-foreground'>
@@ -161,13 +182,13 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
             <li>Master of Science (Engineering)</li>
           </ul>
           }
-        </Card>
-        <Card
-          as="a"
+        </ExperienceCard>
+        <ExperienceCard
           heading='Kerttuli ICT High School'
           subheading='Information Technology'
           date='Sep 2018 - May 2021'
           href='https://www.ictlukio.com'
+          logo={kerttuliLogo}
         >
         {
           <ul class='ms-4 list-disc text-muted-foreground'>
@@ -176,7 +197,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
             </li>
           </ul>
           }
-        </Card>
+        </ExperienceCard>
       </Section>
 {/*
       <Section title='Website List'>
