@@ -66,6 +66,8 @@ Notes on specific content types:
   `public/images/avatars/`, because LinkedIn image URLs expire. An entry can set an optional
   `ribbon` (such as `"Open to work"`) to show a green corner ribbon on its card.
 - **Project links** take a `type` of `github`, `site`, `doc` or `release`, which selects the icon.
+- **Hackathon winnings**: update `amount` on `TeamWinnings` in `src/pages/projects/index.astro`
+  when the team wins prize money.
 - **Website history**: notable site changes get an entry in the timeline at the bottom of
   `src/pages/about/index.astro`.
 - Pages using `CommonPage.astro` define their table of contents manually through a `headings`

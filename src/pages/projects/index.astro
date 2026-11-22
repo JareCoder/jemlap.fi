@@ -2,6 +2,7 @@
 import { Collapse } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import ProjectSection from '@/components/projects/ProjectSection.astro'
+import TeamWinnings from '@/components/projects/TeamWinnings.astro'
 
 const headings = [
   { depth: 2, slug: 'my-projects', text: 'My Projects' },
@@ -182,7 +183,10 @@ const headings = [
     />
   </Collapse>
 
-  <h2 id='hackathons'>Hackathons</h2>
+  <div class='flex flex-wrap items-baseline justify-between gap-x-2'>
+    <h2 id='hackathons'>Hackathons</h2>
+    <TeamWinnings label='Team Mankeli winnings:' amount={12650} />
+  </div>
   <ProjectSection
     projects={[
       {
