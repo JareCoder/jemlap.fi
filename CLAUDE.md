@@ -13,8 +13,8 @@ and some leftover naming come from the theme rather than from this site.
   `@astrojs/mdx` and `katex` overrides once a theme release supports Astro 7
 - **UnoCSS** for styling, added by the theme integration (Tailwind-style utility classes, typography
   preset in `uno.config.ts`)
-- **Vercel** adapter with `output: 'server'`; pages are prerendered by default (`prerender: true`
-  in the site config)
+- **Vercel** adapter with `output: 'server'`; pages are server-rendered unless they export
+  `prerender = true` (blog, archives and tag pages do)
 - **Pagefind** search, **Waline** comments and pageviews (external server), KaTeX math, Shiki code
   highlighting
 - ESLint + Prettier (no semicolons, single quotes, 100 columns, no trailing commas)
