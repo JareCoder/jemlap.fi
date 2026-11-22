@@ -1,0 +1,80 @@
+---
+interface Props {
+  label: string
+  amount: number
+}
+
+const { label, amount } = Astro.props
+const formatted = new Intl.NumberFormat('fi-FI').format(amount)
+---
+
+<p class='team-winnings rounded-xl border bg-background'>
+  <span class='label'>{label}</span>
+  <strong class='amount' data-count-up={amount}>{`${formatted}€`}</strong>
+</p>
+
+<script>
+  const format = (value: number) => `${new Intl.NumberFormat('fi-FI').format(value)}€`
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  document.querySelectorAll<HTMLElement>('[data-count-up]').forEach((element) => {
+    if (reduceMotion) return
+
+    const target = Number(element.dataset.countUp)
+    element.style.minWidth = `${element.offsetWidth}px`
+    element.textContent = format(0)
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+        observer.disconnect()
+
+        const start = performance.now()
+        const duration = 1400
+        const tick = (now: number) => {
+          const progress = Math.min((now - start) / duration, 1)
+          const eased = 1 - (1 - progress) ** 3
+          element.textContent = format(Math.round(target * eased))
+          if (progress < 1) requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
+      },
+      { threshold: 0.6 }
+    )
+    observer.observe(element)
+  })
+</script>
+
+<style>
+  .team-winnings {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.375rem;
+    margin: 0 0 0.75rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 640px) {
+    .team-winnings {
+      font-size: 0.875rem;
+    }
+  }
+
+  .label {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .amount {
+    color: #15803d;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    text-align: end;
+  }
+
+  :global(.dark) .amount {
+    color: #4ade80;
+  }
+</style>
