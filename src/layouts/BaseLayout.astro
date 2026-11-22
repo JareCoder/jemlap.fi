@@ -1,6 +1,6 @@
 ---
 import type { ImageMetadata } from 'astro'
-import { Image } from 'astro:assets'
+import { getImage, Image } from 'astro:assets'
 
 import { Footer, Header, ThemeProvider } from 'astro-pure/components/basic'
 import type { SiteMeta } from 'astro-pure/types'
@@ -16,14 +16,25 @@ interface Props {
   meta: SiteMeta
   highlightColor?: string
   backgroundImage?: ImageMetadata
+  backgroundImageMobile?: ImageMetadata
 }
 
 const {
   meta: { articleDate, description = config.description, ogImage, title },
   highlightColor,
   backgroundImage,
+  backgroundImageMobile,
   ...props
 } = Astro.props
+
+const mobileBackground = backgroundImageMobile
+  ? await getImage({
+      src: backgroundImageMobile,
+      widths: [640, 828, 1000],
+      format: 'webp',
+      quality: 50
+    })
+  : undefined
 ---
 
 <html lang={config.locale.lang}>
@@ -36,14 +47,24 @@ const {
     {
       backgroundImage ? (
         <div id='page-background' aria-hidden='true'>
-          <Image
-            src={backgroundImage}
-            alt=''
-            widths={[640, 1024, 1600, 2000]}
-            sizes='100vw'
-            loading='eager'
-            fetchpriority='high'
-          />
+          <picture>
+            {mobileBackground && (
+              <source
+                media='(max-width: 767px)'
+                srcset={mobileBackground.srcSet.attribute}
+                sizes='80vh'
+                type='image/webp'
+              />
+            )}
+            <Image
+              src={backgroundImage}
+              alt=''
+              widths={[640, 1024, 1600, 2000]}
+              sizes='100vw'
+              loading='eager'
+              fetchpriority='high'
+            />
+          </picture>
         </div>
       ) : (
         highlightColor && (
